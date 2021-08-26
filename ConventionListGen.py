@@ -18,7 +18,14 @@ oddConventions = con_list_table_element.find_elements_by_class_name("odd")
 conventions.extend(oddConventions)
 
 for convention in conventions:
-	print(convention.text)
+	contents = convention.find_elements_by_tag_name('td')
+	for content in contents:
+		print(content.text)
+		
+	print("\n")
+
+
+
 
 driver.quit()
 
